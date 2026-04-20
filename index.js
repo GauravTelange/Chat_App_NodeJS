@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
         user: data.username,
         content: data.msg
     });
-    io.to(data.roomid).broadcast.emit('msg_rcvd', data);
+    io.to(data.roomid).emit('msg_rcvd', data);
    });
 
    socket.on('typing', (data) => {
